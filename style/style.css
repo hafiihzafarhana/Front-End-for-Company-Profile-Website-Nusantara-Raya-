@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: gray;
+}
+
+a{
+    text-decoration: none;
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+a:hover{
+    border-bottom: 1px solid whitesmoke;
+}
+
+/* navigasi */
+.navigation{
+    display: flex;
+    /* bottom top & right left */
+    padding: 10px 40px;
+    width: 100%;
+    background-color: rgb(174, 247, 107);
+    box-shadow: 0px 2px 4px rgb(174, 247, 107);
+}
+
+.navigation ul{
+    /* flex: 1 1 0 (same) */
+    flex: 1;
+    text-align: right;
+}
+
+.navigation ul li{
+    display: inline-block;
+    margin:10px 25px;
+}
+
+.logo-brand{
+    font-size: 30px;
+    font-weight: 800;
+    color: whitesmoke;
+}
+
+.mobile-list{
+    display: none;
+}
+
+/* ========================================== */
+
+/* isi row */
+.row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0;
+    padding: 0 8%;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* .col-1 */
+.col-1{
+    /* flex-basis untuk mengatur ukuran awal dari flex-item.  */
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+}
+
+.col-1 h2{
+    color: rgb(174, 247, 107);
+    font-size: 54px;
+}
+
+.col-1 h3{
+    font-size: 30px;
+    color: white;
+    margin: 20px 0 10px;
+    font-weight: 100;
+}
+
+.col-1 p{
+    font-size: 16px;
+    color: white;
+    font-weight: 100;
+}
+
+.col-1 p{
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+.button{
+    font-size: 16px;
+    width: 140px;
+    border: 0;
+    padding: 12px 10px;
+    outline: none;
+    color: white;
+    font-weight: 700;
+    background: linear-gradient(to right, rgb(174, 247, 107), rgb(199, 248, 153));
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+    position: absolute;
+}
+
+.button .la-business-time{
+    font-size: 20px;
+    display: none;
+    /* position: absolute; */
+}
+
+/* jika button di hover muncul .la-business-time */
+.button:hover .la-business-time{
+    display: block;
+}
+
+.button:hover{
+    color: black;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col-1::after{
+    content: '';
+    width: 10px;
+    height: 57%;
+    background: linear-gradient(to right, rgb(174, 247, 107), rgb(199, 248, 153));
+    position: absolute;
+    left: -40px;
+    top: 8px;
+}
+
+/* .col-2 */
+.col-2{
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.col-2 .index-img-jumbo{
+    width: 90%;
+}
+
+.col-boks{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(to right, rgb(174, 247, 107), rgb(199, 248, 153));
+    border-radius: 20px 0 0 20px;
+    width: 80%;
+    z-index: -1;
+    transform: translateX(110px);
+}
+
+.see-stuff .la-eye{
+    /* transform: translateX(-50px); */
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.see-stuff a{
+    font-weight: 800;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+    transition: .5s;
+    border-bottom: none;
+}
+
+.see-stuff a i{
+    transform:translateX(33px);
+}
+
+.see-stuff a:hover{
+    transition: .5s;
+    color: white;
+}
+
+/* ============================================= */
+
+/* responsive*/
+@media only screen and (max-width:800px) {
+    nav.navigation{
+        display: inline-block;
+        padding: 10px 10px;
+    }
+
+    .logo-brand{
+        text-align: center;
+    }
+
+    .navigation .desktop-list{
+        display: none;
+    }
+
+    .navigation .mobile-list{
+        z-index: 10000;
+        background-color: black;
+        display: block;
+        color: whitesmoke;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .navigation .mobile-list li a{
+        font-size: 35px;
+        border-bottom: none;
+    }
+
+    .row{
+        /* min-height: 100vh; */
+        /* flex-direction: column-reverse; */
+        margin-bottom:100px;
+    }
+}
+
+@media only screen and (max-width:700px){
+    .row{
+        /* min-height: 100vh; */
+        flex-direction: column-reverse;
+        margin-bottom:100px;
+    }
+
+    .col-1{
+        margin-bottom:80px;
+        flex-basis: 100%;
+    }
+
+    .col-1 h2{
+        font-size: 35px;
+    }
+
+    .col-1 h3{
+        font-size: 24px;
+    }
+
+    .col-1 p{
+        font-size: 16px;
+    }
+    
+    .col-2{
+        margin-bottom: 50px;
+        flex-basis: 100%;
+    }
+
+    .col-2 .index-img-jumbo{
+        width: 70%;
+    }
+
+    .see-stuff:hover{
+        color: black;
+    }
+}
+
+@media only screen and (max-width:670px) {
+    .row{
+        /* min-height: 100vh; */
+        /* flex-direction: column-reverse; */
+        margin-bottom: 100px;
+    }
+}
+
+
+@media only screen and (max-width:670px) {
+    .navigation .mobile-list li a{
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width:526px) {
+    .navigation .mobile-list li a{
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width:475px) {
+    .navigation .mobile-list li a{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:410px) {
+    .navigation .mobile-list li a{
+        font-size: 15px;
+    }
+}

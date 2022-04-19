@@ -1,0 +1,224 @@
+.row-about{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+    padding: 30px 8%;
+    overflow-x:hidden;
+    min-height: 120vh;
+}
+
+.col-1-about{
+    flex-basis: 40%;
+    margin-left: 50px;
+    position: relative;
+}
+
+.col-1-about h2{
+    color: rgb(174, 247, 107);
+    font-size: 54px;
+}
+
+.col-1-about p{
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 30px 0;
+}
+
+.col-1-about::after{
+    content: '';
+    width: 10px;
+    height: 57%;
+    background: linear-gradient(to right, rgb(174, 247, 107), rgb(199, 248, 153));
+    position: absolute;
+    left: -40px;
+    top: 8px;
+}
+
+    .col-2-about{
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.about-img-jumbo{
+    width: 100%;
+}
+
+.about-col-boks{
+    position: absolute;
+    right: 0;
+    top: 1;
+    height: 130%;
+    background: linear-gradient(to right, rgb(174, 247, 107), rgb(199, 248, 153));
+    border-radius: 20px 0 0 20px;
+    width: 80%;
+    z-index: -1;
+    transform: translateX(110px);
+}
+
+/* Our Team */
+section{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title-team{
+    text-align: center;
+    font-size: 54px;
+    color: rgb(174, 247, 107);
+}
+
+div.card-section{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    margin-bottom:100px;
+}
+
+.card-section .card{
+
+    position: relative;
+    width: 250px;
+    height: 300px;
+    background: rgb(174, 247, 107);
+    /* background: rgba(255, 255, 255, 0.05); */
+    margin: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.card-section .card .content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    opacity: 0.89;
+    transition: 0.9s;
+}
+
+.card-section .card:hover .content{
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.card-section .card .content .this-img{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid whitesmoke;
+}
+
+.card-section .card .content .this-img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-section .card .content .card-konten h3{
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 10px;
+    line-height: 1.1em;
+}
+
+.card-section .card .content .card-konten h3 span{
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.card-section .card .icon-team{
+    position: absolute;
+    bottom: 20px;
+}
+
+.card-section .card .icon-team li{
+    list-style: none;
+    transform: translateY(15px);
+    transition: 0.9s;
+    opacity: 0;
+}
+
+.card-section .card:hover .icon-team li{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-section .card .icon-team li a{
+    font-size: 24px;
+    text-decoration: none;
+    border-bottom: 0;
+}
+
+@media only screen and (max-width:700px){
+    .row-about{
+        /* min-height: 100vh; */
+        flex-direction: column-reverse;
+        margin-bottom:100px;
+        min-height: 150vh;
+        overflow: hidden;
+    }
+
+    .col-1-about{
+        /* margin-top: -400px; */
+    }
+
+    .col-1-about h2{
+        font-size: 35px;
+    }
+
+    .col-1-about p{
+        font-size: 16px;
+    }
+
+    .col-2-about{
+        margin-bottom: 50px;
+        flex-basis: 100%;
+    }
+
+    .col-2-about .about-img-jumbo{
+        width: 70%;
+    }
+
+    .title-team{
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width:450px){
+    .col-2-about{
+        display: none;
+    }
+
+    .col-1-about{
+        margin-top: -400px;
+    }
+
+    .sec{
+        margin-top: -500px;
+    }
+}
